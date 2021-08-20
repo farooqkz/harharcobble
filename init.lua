@@ -47,8 +47,8 @@ minetest.register_node("harharcobble:harharcobble", {
 	end
     end,
     after_dig_node = function(pos, oldnode, oldmetadata, digger)
-	local placer_name = oldmetadata["placer"]
-	local node_name = oldmetadata["name"]
+	local placer_name = oldmetadata["fields"]["placer"]
+	local node_name = oldmetadata["fields"]["name"]
 	local placer = minetest.get_player_by_name(placer_name)
 	local digger_name = digger:get_player_name()
         if placer and placer:get_pos() then
